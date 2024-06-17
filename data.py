@@ -1,45 +1,48 @@
 import pandas as pd
 
 def format_values(value):
-        if value == 'sales':
+    match value:
+        case 'sales':
             return 'Отдел продаж'
-        elif value == 'technical':
+        case 'technical':
             return 'Технический'
-        elif value == 'support':
+        case 'support':
             return 'Отдел поддержки'
-        elif value == 'IT':
+        case 'IT':
             return 'IT'
-        elif value == 'product_mng':
+        case 'product_mng':
             return 'Продуктовые менеджеры'
-        elif value == 'RandD':
+        case 'RandD':
             return 'R&D-менеджеры'
-        elif value == 'marketing':
+        case 'marketing':
             return 'Отдел маркетинга'
-        elif value == 'accounting':
+        case 'accounting':
             return 'Бухгалтерия'
-        elif value == 'management':
+        case 'management':
             return 'Отдел менеджмента'
-        elif value == 'hr':
+        case 'hr':
             return 'HR'
-        else:
+        case _:
             return value
 
 def format_string(string):
-        if string == 'low':
+    match string:
+        case 'low':
             return 'Маленькая'
-        elif string == 'medium':
+        case 'medium':
             return 'Средняя'
-        elif string == 'high':
+        case 'high':
             return 'Высокая'
-        else:
+        case _:
             return string
-        
+
 def format_accident(value):
-        if value == 1:
+    match value:
+        case 1:
             return 'Было'
-        elif value == 0:
+        case 0:
             return 'Не было'
-        else:
+        case _:
             return value
 
 df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQ08XW2wvmOWH0Ea0f-ty4sRWpGc8xXiaUcALtdi9_nlRWlQSWPsOqJMiSZoIVMgTiJLZFAiWE1-N_w/pub?output=csv")
